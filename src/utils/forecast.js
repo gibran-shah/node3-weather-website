@@ -11,7 +11,14 @@ const forecast = (lat, lon, callback) => {
             callback('Unable to find location.');
         } else {
             const weather = body.currently;
-            callback(undefined, weather.summary + '. It is currently ' + weather.temperature + ' degrees. There is a ' + weather.precipProbability + '% chance of rain.');
+            callback(undefined,
+                weather.summary
+                    + '. It is currently '
+                    + weather.temperature
+                    + ' degrees. There is a '
+                    + weather.precipProbability
+                    + '% chance of rain. The humidity is '
+                    + weather.humidity + '.');
         }
     });
 
